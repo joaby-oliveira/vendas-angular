@@ -13,7 +13,7 @@ export class SaleApi {
     return this.httpClient.get<{ data: Sale[] }>(`${environment.apiUrl}/venda`);
   }
 
-  create(sale: Sale): Observable<Sale> {
+  create(sale: any): Observable<Sale> {
     return this.httpClient.post<Sale>(`${environment.apiUrl}/venda`, sale);
   }
 

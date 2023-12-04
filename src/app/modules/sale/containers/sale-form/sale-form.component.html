@@ -1,23 +1,24 @@
-  <!-- Sales Form -->
-  <div class="mt-8">
-    <h2 class="text-2xl font-semibold mb-4">Add New Sale</h2>
+<div class="mt-8">
+  <h2 class="text-2xl font-semibold mb-4">Registrar nova venda</h2>
 
-    <form [formGroup]="saleForm" (ngSubmit)="handleSubmit()">
-      <div class="mb-4">
-        <label for="productName" class="block text-gray-600 font-medium">Product Name</label>
-        <input type="text" id="productName" formControlName="productName" class="form-input mt-1 p-2 w-full" />
-      </div>
+  <form [formGroup]="saleForm" (ngSubmit)="handleSubmit()">
+    <div class="mb-4">
+      <label for="product_name" class="block text-gray-600 font-medium">Nome do produto</label>
+      <input type="text" id="product_name" formControlName="product_name" class="border border-gray-300 p-2 w-full" />
+    </div>
 
-      <div class="mb-4">
-        <label for="category" class="block text-gray-600 font-medium">Category</label>
-        <input type="text" id="category" formControlName="category" class="form-input mt-1 p-2 w-full" />
-      </div>
+    <div class="mb-4">
+      <label for="price" class="block text-gray-600 font-medium">Preço</label>
+      <input type="number" id="price" formControlName="price" class="border border-gray-300 p-2 w-full" />
+    </div>
 
-      <div class="mb-4">
-        <label for="price" class="block text-gray-600 font-medium">Price</label>
-        <input type="number" id="price" formControlName="price" class="form-input mt-1 p-2 w-full" />
-      </div>
+    <div class="mb-4">
+      <label for="salesman_id" class="block text-gray-600 font-medium">Vendedor</label>
+      <select id="salesman_id" formControlName="salesman_id" class="border border-gray-300 p-2 w-full">
+        <option *ngFor="let salesman of salesmen" [value]="salesman.id">{{ salesman.name }}</option>
+      </select>
+    </div>
 
-      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Add Sale</button>
-    </form>
-  </div>
+    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Registrar venda +</button>
+  </form>
+</div>

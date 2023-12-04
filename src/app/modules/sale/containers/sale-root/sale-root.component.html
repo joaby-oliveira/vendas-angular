@@ -1,10 +1,11 @@
 <header class="flex justify-between items-center mb-3">
   <h2 class="text-3xl font-semibold m-0">Vendas</h2>
-  <button
+  <a
     class="bg-green-500 text-white px-4 py-2 text-sm rounded-md hover:bg-green-600"
+    routerLink="criar"
   >
     Registrar venda +
-  </button>
+  </a>
 </header>
 <div
   *ngIf="sales && sales.length > 0; else notFound"
