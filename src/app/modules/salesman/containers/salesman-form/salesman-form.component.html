@@ -1,0 +1,59 @@
+<!-- salesman-form.component.html -->
+
+<div class="mt-8">
+  <h2 class="text-2xl font-semibold mb-4">Formulário do Vendedor</h2>
+
+  <form [formGroup]="salesmanForm" (ngSubmit)="handleSubmit()">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-600 font-medium">Nome</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="border border-gray-300 p-2 w-full"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="email" class="block text-gray-600 font-medium">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="border border-gray-300 p-2 w-full"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="password" class="block text-gray-600 font-medium"
+        >Senha</label
+      >
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        class="border border-gray-300 p-2 w-full"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="commission" class="block text-gray-600 font-medium"
+        >Comissão</label
+      >
+      <input
+        type="text"
+        id="commission"
+        formControlName="commission"
+        class="border border-gray-300 p-2 w-full"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+      [disabled]="!changesToSave && formMode !== 'create'"
+    >
+      {{ formMode === "create" ? "Criar Vendedor" : "Atualizar Vendedor" }}
+    </button>
+  </form>
+</div>

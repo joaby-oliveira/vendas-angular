@@ -1,3 +1,17 @@
+<nav class="bg-gray-800 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a class="text-xl font-semibold" routerLink="/">Ecommerce</a>
+
+    <!-- Navigation Links -->
+    <ul class="flex space-x-4">
+      <li><a routerLink="/vendas" class="hover:text-gray-300">Vendas</a></li>
+      <li>
+        <a routerLink="/vendedores" class="hover:text-gray-300">Vendedores</a>
+      </li>
+      <!-- Add more links as needed -->
+    </ul>
+  </div>
+</nav>
 <main class="container p-8">
   <router-outlet></router-outlet>
 </main>

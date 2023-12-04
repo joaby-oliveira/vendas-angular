@@ -1,0 +1,46 @@
+<!-- salesmen-list.component.html -->
+
+<div class="mt-8">
+  <header class="flex justify-between items-center mb-3">
+    <h2 class="text-3xl font-semibold m-0">Lista de vendedores</h2>
+    <a
+      class="bg-green-500 text-white px-4 py-2 text-sm rounded-md hover:bg-green-600"
+      routerLink="criar"
+    >
+      Cadastrar vendedor +
+    </a>
+  </header>
+  <table class="min-w-full border border-gray-300">
+    <thead>
+      <tr>
+        <th class="border border-gray-300 p-2">Nome</th>
+        <th class="border border-gray-300 p-2">E-mail</th>
+        <th class="border border-gray-300 p-2">Senha</th>
+        <th class="border border-gray-300 p-2">Comissão</th>
+        <th class="border border-gray-300 p-2">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let salesman of salesmen">
+        <td class="border border-gray-300 p-2">{{ salesman.name }}</td>
+        <td class="border border-gray-300 p-2">{{ salesman.email }}</td>
+        <td class="border border-gray-300 p-2">*********</td>
+        <td class="border border-gray-300 p-2">{{ salesman.commission }}</td>
+        <td class="border border-gray-300 p-2">
+          <button
+            class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            (click)="editSalesman(salesman)"
+          >
+            Editar
+          </button>
+          <button
+            class="ml-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+            (click)="deleteSalesman(salesman)"
+          >
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

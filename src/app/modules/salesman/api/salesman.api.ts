@@ -18,11 +18,11 @@ export class SalesmanApi {
     return this.httpClient.get<Salesman>(`${environment.apiUrl}/vendedor/${id}`);
   }
 
-  createSalesman(salesman: Salesman): Observable<Salesman> {
+  createSalesman(salesman: any): Observable<Salesman> {
     return this.httpClient.post<Salesman>(`${environment.apiUrl}/vendedor`, salesman);
   }
 
-  updateSalesman(id: string, salesman: Salesman): Observable<Salesman> {
+  updateSalesman(id: string, salesman: any): Observable<Salesman> {
     return this.httpClient.put<Salesman>(
       `${environment.apiUrl}/vendedor/${id}`,
       salesman
