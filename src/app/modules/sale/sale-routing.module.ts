@@ -6,6 +6,7 @@ import { SaleRootComponent } from './containers/sale-root/sale-root.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: SaleRootComponent },
   { path: 'criar', component: SaleFormComponent },
+  { path: 'editar', component: SaleFormComponent },
 ];
 
 @NgModule({

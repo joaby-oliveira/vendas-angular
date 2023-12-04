@@ -21,7 +21,7 @@ export class SaleApi {
     return this.httpClient.get<Sale>(`${environment.apiUrl}/venda/${id}`);
   }
 
-  update(id: string, sale: Sale): Observable<Sale> {
+  update(id: string, sale: any): Observable<Sale> {
     return this.httpClient.put<Sale>(`${environment.apiUrl}/venda/${id}`, sale);
   }
 

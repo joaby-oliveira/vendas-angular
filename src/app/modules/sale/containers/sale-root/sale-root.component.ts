@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { SaleApi } from '../../api/sale.api';
 import { Sale } from '../../interfaces/Sale';
 import { SalesmanApi } from 'src/app/modules/salesman/api/salesman.api';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: 'sale-root.component.html',
 })
 export class SaleRootComponent implements OnInit {
-  constructor(private saleApi: SaleApi, private salesmanApi: SalesmanApi) {}
+  constructor(
+    private saleApi: SaleApi,
+    private salesmanApi: SalesmanApi,
+    private router: Router
+  ) {}
 
   sales!: Sale[];
   error!: { message: string };
@@ -23,7 +28,9 @@ export class SaleRootComponent implements OnInit {
       },
     });
   }
-  editSale(sale: Sale) {}
+  editSale(sale: Sale) {
+    this.router.navigate(['vendas/editar'], { queryParams: { id: sale.id } });
+  }
 
   deleteSale(sale: Sale) {
     this.saleApi.delete(sale.id).subscribe({
@@ -34,5 +41,9 @@ export class SaleRootComponent implements OnInit {
         console.log('nao excluiu');
       },
     });
+  }
+
+  calculateCommission(price: number, commissionRate: number): number {
+    return price * (commissionRate / 100);
   }
 }

@@ -1,3 +1,5 @@
+<a routerLink="/vendas" class="underline text-blue-600 mt-4 block">Voltar</a>
+
 <div class="mt-8">
   <h2 class="text-2xl font-semibold mb-4">Registrar nova venda</h2>
 
@@ -19,6 +21,12 @@
       </select>
     </div>
 
-    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Registrar venda +</button>
+    <button
+      type="submit"
+      class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+      [disabled]="!changesToSave && formMode !== 'create'"
+    >
+      {{formMode === 'create' ? 'Registrar venda +' : 'Salvar alterações'}}
+    </button>
   </form>
 </div>
